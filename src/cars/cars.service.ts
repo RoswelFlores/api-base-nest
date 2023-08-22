@@ -9,26 +9,11 @@ export class CarsService {
 
 
     private cars: Car[] = [
-        {
-            id: uuid(),
-            brand: 'Toyota',
-            model: 'Corolla'
-        },
-        {
-            id: uuid(),
-            brand: 'Toyota',
-            model: 'Auris'
-        },
-        {
-            id: uuid(),
-            brand: 'Susuki',
-            model: 'Swift'
-        },
-        {
-            id: uuid(),
-            brand: 'Chevrolet',
-            model: 'Aveo'
-        },
+        // {
+        //     id: uuid(),
+        //     brand: 'Toyota',
+        //     model: 'Corolla'
+        // },
     ];
 
     findAll() {
@@ -71,5 +56,9 @@ export class CarsService {
     deleteCar( id: string ) {
         const car = this.findOneById( id );
         this.cars = this.cars.filter( car => car.id !== id );
+    }
+
+    fillCarsWithSeedData(cars : Car[]){
+        this.cars = cars;
     }
 }
